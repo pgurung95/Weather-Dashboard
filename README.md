@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-### URL : https://pgurung95.github.io/Weather-Dashboard/?
+### URL : https://pgurung95.github.io/Weather-Dashboard/
 
 ## Description
 A simple web application that allows users to search for a city to get the current weather and 5 day forecast. Previous searches will be displayed on the side and user will have the ability to promptly search that city.  
