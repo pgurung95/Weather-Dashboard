@@ -1,4 +1,4 @@
-var cityFormEl=document.querySelector("#city-search-form");
+var cityFormEl = document.querySelector("#city-search-form");
 var searchHistoryButtonEl = document.querySelector("#search-history-button");
 var cityInputEl=document.querySelector("#city");
 var weatherContainerEl=document.querySelector("#current-weather-container");
@@ -43,12 +43,10 @@ var displayWeather = function(weather, searchCity){
    weatherContainerEl.textContent= "";  
    citySearchInputEl.textContent=searchCity;
 
-  
    var currentDate = document.createElement("span")
    currentDate.textContent=" (" + moment(weather.dt.value).format("MM/DD/YYYY") + ") ";
    citySearchInputEl.appendChild(currentDate);
 
-   
    var weatherIcon = document.createElement("img")
    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
    citySearchInputEl.appendChild(weatherIcon);
@@ -57,23 +55,18 @@ var displayWeather = function(weather, searchCity){
    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
    temperatureEl.classList = "list-group-item"
   
-  
    var humidityEl = document.createElement("span");
    humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
    humidityEl.classList = "list-group-item"
-
-   
+ 
    var windSpeedEl = document.createElement("span");
    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
    windSpeedEl.classList = "list-group-item"
 
-   
    weatherContainerEl.appendChild(temperatureEl);
-
-   
+ 
    weatherContainerEl.appendChild(humidityEl);
-
-  
+ 
    weatherContainerEl.appendChild(windSpeedEl);
 
    var lat = weather.coord.lat;
@@ -110,8 +103,7 @@ var displayUvIndex = function(index){
     };
 
     uvIndexEl.appendChild(uvIndexValue);
-
-    
+  
     weatherContainerEl.appendChild(uvIndexEl);
 }
 
@@ -171,13 +163,10 @@ var display5Day = function(weather){
         
         forecastContainerEl.appendChild(forecastEl);
     }
-
 }
 
 var pastSearch = function(pastSearch){
  
-
-
     pastSearchEl = document.createElement("button");
     pastSearchEl.textContent = pastSearch;
     pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
@@ -196,7 +185,6 @@ var pastSearchHandler = function(event){
     }
 }
 
- 
 
 cityFormEl.addEventListener("submit", searchHandler);
 searchHistoryButtonEl.addEventListener("click", pastSearchHandler);
